@@ -1,0 +1,11 @@
+D:\VisualStudioProjects\HttpReqestsBot\HttpReqestsBot\bin\Release\HttpReqestsBot.exe.config
+D:\VisualStudioProjects\HttpReqestsBot\HttpReqestsBot\bin\Release\HttpReqestsBot.exe
+D:\VisualStudioProjects\HttpReqestsBot\HttpReqestsBot\bin\Release\HttpReqestsBot.pdb
+D:\VisualStudioProjects\HttpReqestsBot\HttpReqestsBot\obj\Release\Interop.SHDocVw.dll
+D:\VisualStudioProjects\HttpReqestsBot\HttpReqestsBot\obj\Release\HttpReqestsBot.csproj.ResolveComReference.cache
+D:\VisualStudioProjects\HttpReqestsBot\HttpReqestsBot\obj\Release\HttpReqestsBot.Form1.resources
+D:\VisualStudioProjects\HttpReqestsBot\HttpReqestsBot\obj\Release\HttpReqestsBot.Properties.Resources.resources
+D:\VisualStudioProjects\HttpReqestsBot\HttpReqestsBot\obj\Release\HttpReqestsBot.csproj.GenerateResource.cache
+D:\VisualStudioProjects\HttpReqestsBot\HttpReqestsBot\obj\Release\HttpReqestsBot.csproj.CoreCompileInputs.cache
+D:\VisualStudioProjects\HttpReqestsBot\HttpReqestsBot\obj\Release\HttpReqestsBot.exe
+D:\VisualStudioProjects\HttpReqestsBot\HttpReqestsBot\obj\Release\HttpReqestsBot.pdb
