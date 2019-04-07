@@ -10,14 +10,15 @@ using System.Windows.Forms;
 using System.IO;
 using SHDocVw;
 using System.Runtime.InteropServices;
+using System.Net.Http;
 
 
 namespace HttpReqestsBot
 {
     public partial class Form1 : Form
     {
-        //IEの入れ物
-        SHDocVw.InternetExplorer ie = null;
+        //HttpClient
+        private static HttpClient client = new HttpClient();
         //テキストボックス
         StringReader strReader = null;
 
@@ -33,7 +34,7 @@ namespace HttpReqestsBot
             this.MinimumSize = this.Size;
             //ファイル読み込みダイアログの設定
             openFileDialog1.Title = "URLリストを選択してください。";
-            openFileDialog1.FileName = "URL_List.txt";
+            openFileDialog1.FileName = "けものフレンズ２の制作陣を許すな！.txt";
             openFileDialog1.Filter = "てきすとファイル(*.txt)|*.txt;|すべてのファイル(*.*)|*.*";
             //ボタン関連
             button3.Enabled = false;
@@ -62,10 +63,7 @@ namespace HttpReqestsBot
         private void button1_Click(object sender, EventArgs e)
         {
             button1.Enabled = false;
-            ie = new SHDocVw.InternetExplorer();
-            ie.Visible = false;
             read_req_file();
-            ie.Quit();
             button1.Enabled = true;
         }
         //ファイル読み込みからのリクエスト
@@ -75,26 +73,23 @@ namespace HttpReqestsBot
             //末端までr－プ
             while (strReader.Peek() > -1)
             {
-                http_Req(strReader.ReadLine());
+               http_Req(strReader.ReadLine());
             }
             strReader.Close();
         }
         //HTTPリクエスト
-        private void http_Req(String URLStr)
+        private void http_Req(String urlStr)
         {
-            while(ie.Busy)
-            {
-            }
-            //リクエスト
-            ie.Navigate(URLStr);
+            Console.WriteLine(urlStr + "接続開始");
+            client.GetAsync(urlStr);
+            Console.WriteLine("接続完了");
         }
         //秒おきに実行
         private void button2_Click(object sender, EventArgs e)
         {
             button2.Enabled = false;
             button3.Enabled = true;
-            ie = new SHDocVw.InternetExplorer();
-            ie.Visible = false;
+            
             //タイマーの秒設定
             timer1.Interval = 1000 * int.Parse(textBox1.Text);
             timer1.Enabled = true;
@@ -111,7 +106,6 @@ namespace HttpReqestsBot
             timer1.Enabled = false;
             button2.Enabled = true;
             button3.Enabled = false;
-            ie.Quit();
         }
     }
 }
